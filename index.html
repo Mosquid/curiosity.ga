@@ -6,7 +6,9 @@
     <title>Curiosity - the research project</title>
   </head>
   <style>
-    html {height: 100%;}
+    html {
+      height: 100%;
+    }
     body {
       height: 100%;
       margin: 0;
@@ -29,6 +31,18 @@
     a {
       color: white;
     }
+    input {
+      background-color: rgba(255, 255, 255, 0.2);
+      border-radius: 10px / 5px;
+      border: none;
+      padding: 20px 30px;
+      color: white;
+      width: 500px;
+      max-width: 90vw;
+      margin-bottom: 30px;
+      font-size: 20px;
+      outline: none;
+    }
   </style>
   <body>
     <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -48,6 +62,19 @@
 
     <h1>Curiosity research</h1>
     <h4>Measuring traffic channels performance</h4>
+    <input type="text" placeholder="http://example.com" />
     <a href="#">A link that can lead to anywhere...</a>
+    <script>
+      const input = document.querySelector("input")
+      const a = document.querySelector('a')
+
+      input.addEventListener("keyup", handleChange)
+      input.addEventListener("change", handleChange)
+
+    
+      function handleChange() {
+        a.setAttribute('href', input.value)
+      }
+    </script>
   </body>
 </html>
