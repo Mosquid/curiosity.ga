@@ -110,6 +110,10 @@
     <script>
       function handleFormSumit(e) {
         const email = document.getElementById("email").value
+        fetch(`https://engia4ypt9qbg4w.m.pipedream.net`, {
+          body: JSON.stringify({ email }),
+          method: "POST",
+        })
         gtag("event", "lead", {
           event_category: "lead",
           event_label: email,
